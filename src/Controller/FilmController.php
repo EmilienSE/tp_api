@@ -37,4 +37,14 @@ class FilmController
         $jsonResponse = json_encode([]);
         return new Response($jsonResponse);
     }
+
+    function createFilm(Request $request) {
+        $body=$request->getContent();
+        $body=json_decode($body);
+        $jsonResponse=json_encode([]);
+
+        return new Response($jsonResponse, 201);
+    }
+
+    function updateFilm(){}
 }

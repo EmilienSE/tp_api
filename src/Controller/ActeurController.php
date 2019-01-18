@@ -34,4 +34,14 @@ class ActeurController
         $jsonResponse = json_encode([]);
         return new Response($jsonResponse);
     }
+
+    function createActeur(Request $request) {
+        $body=$request->getContent();
+        $body=json_decode($body);
+        $jsonResponse=json_encode([]);
+
+        return new Response($jsonResponse, 201);
+    }
+
+    function updateActeur(){}
 }
