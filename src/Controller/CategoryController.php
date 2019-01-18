@@ -41,4 +41,14 @@ class CategoryController
         $jsonResponse = json_encode([]);
         return new Response($jsonResponse);
     }
+
+    function createCategory(Request $request) {
+        $body=$request->getContent();
+        $body=json_decode($body);
+        $jsonResponse=json_encode([]);
+
+        return new Response($jsonResponse, 201);
+    }
+
+    function updateCategory(){}
 }
