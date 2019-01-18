@@ -7,10 +7,10 @@ categories:
   methods: [GET]
   controller: App\Controller\CategoryController::getAllCategories
 
-categories #TODO:
-  path: /categories
-  methods: [POST]
-  controller: App\Controller\CategoryController::#TODO
+#categories #TODO:
+#  path: /categories
+#  methods: [POST]
+#  controller: App\Controller\CategoryController::#TODO
 
 category:
   path: /categories/{id}
@@ -22,30 +22,30 @@ category_delete:
   methods: [DELETE]
   controller: App\Controller\CategoryController::deleteCategory
 
-category #TODO:
-  path: /categories/{id}
-  methods: [PUT]
-  controller: App\Controller\CategoryController::#TODO
+#category #TODO:
+#  path: /categories/{id}
+#  methods: [PUT]
+#  controller: App\Controller\CategoryController::#TODO
 
 films:
   path: /films
   methods: [GET]
   controller: App\Controller\FilmController::getAllFilms
 
-films #TODO:
-  path: /films
-  methods: [POST]
-  controller: App\Controller\FilmController::#TODO
+#films #TODO:
+#  path: /films
+#  methods: [POST]
+#  controller: App\Controller\FilmController::#TODO
 
 film:
   path: /films/{id}
   methods: [GET]
   controller: App\Controller\FilmController::getFilm
 
-film #TODO:
-  path: /films/{id}
-  methods: [PUT]
-  controller: App\Controller\FilmController::#TODO
+#film #TODO:
+#  path: /films/{id}
+#  methods: [PUT]
+#  controller: App\Controller\FilmController::#TODO
 
 film_delete:
   path: /films/{id}
@@ -57,10 +57,10 @@ acteurs:
   methods: [GET]
   controller: App\Controller\ActeurController::getAllActeurs
 
-acteurs #TODO:
-  path: /acteurs
-  methods: [POST]
-  controller: App\Controller\ActeurController::#TODO
+#acteurs #TODO:
+#  path: /acteurs
+#  methods: [POST]
+#  controller: App\Controller\ActeurController::#TODO
 
 acteur:
   path: /acteurs/{id}
@@ -72,7 +72,7 @@ acteur_delete:
   methods: [DELETE]
   controller: App\Controller\ActeurController::deleteActeur
 
-acteur #TODO:
-  path: /acteurs/{id}
-  methods: [PUT]
-  controller: App\Controller\ActeurController::#TODO
+#acteur #TODO:
+#  path: /acteurs/{id}
+#  methods: [PUT]
+#  controller: App\Controller\ActeurController::#TODO

@@ -8,5 +8,14 @@
     <body>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
+        <script>
+        	$.ajax({
+				type: "GET",
+				url: "localhost:8000/films",
+				success: function(data){
+					console.log(data);
+				}
+			});
+        </script>
     </body>
 </html>
