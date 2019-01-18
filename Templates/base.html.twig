@@ -2,20 +2,63 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}Netlouix{% endblock %}</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+    <body style="background-color:black">
+        <nav class="navbar navbar-light bg-light" style="margin-bottom:20px;background-color:black">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Netflix_2015_logo.svg/2000px-Netflix_2015_logo.svg.png" height="30" class="d-inline-block align-top" alt="">
+                </a>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6" id="output">
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+
+
+
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script>
         	$.ajax({
 				type: "GET",
-				url: "localhost:8000/films",
+                dataType: 'json',
+				url: "http://localhost:8000/films",
 				success: function(data){
 					console.log(data);
+                    data.forEach(function(film){
+                        $('#output').append(
+                            '<div class="card">'+
+                                '<div class="card-body">'+
+                                    '<h5 class="card-title">'+ film.titre +'</h5>'+
+                                    '<div class="card-text">'+ film.synopsis +'</div>'+
+                                    '<button onclick="afficherFilm('+ film.id +')" class="btn btn-primary">Afficher</button>'+
+                                '</div>'+
+                            '</div>'
+                        );
+                    });
 				}
 			});
+
+            function afficherFilm(id){
+                $.ajax({
+                    type: "GET",
+                    dataType: 'json',
+                    url: "http://localhost:8000/films/"+ id,
+                    success: function(data){
+                        console.log(data);
+                    }
+                })
+            }
         </script>
     </body>
 </html>
