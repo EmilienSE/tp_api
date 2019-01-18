@@ -12,3 +12,33 @@ category_delete:
   path: /categories/{id}
   methods: [DELETE]
   controller: App\Controller\CategoryController::deleteCategory
+
+films:
+  path: /films
+  methods: [GET]
+  controller: App\Controller\FilmController::getAllFilms
+
+film:
+  path: /films/{id}
+  methods: [GET]
+  controller: App\Controller\FilmController::getFilm
+
+film_delete:
+  path: /films/{id}
+  methods: [DELETE]
+  controller: App\Controller\FilmController::deleteFilm
+
+acteurs:
+  path: /acteurs
+  methods: [GET]
+  controller: App\Controller\ActeurController::getAllActeurs
+
+acteur:
+  path: /acteurs/{id}
+  methods: [GET]
+  controller: App\Controller\ActeurController::getActeur
+
+acteur_delete:
+  path: /acteurs/{id}
+  methods: [DELETE]
+  controller: App\Controller\ActeurController::deleteActeur
