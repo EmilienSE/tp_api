@@ -10,7 +10,7 @@ pour télécharger composer -> https://getcomposer.org/
  php bin/console server:run
 ```
 ## Page d'accueil
-Pour acceder à la page d'accueil il faut mettre /home
+Pour acceder à la page d'accueil il faut mettre http:localhost:8000/home
 
 ## Routes
 Les routes sont écrites dans le fichier `/config/routes.yaml`
